@@ -24,8 +24,11 @@ var forObject = function(item, depth) {
           ( form.hasOwnProperty('conspicuous') ?
              '!!' :
              '\\' ) +
-          ' ' +
-          formToMarkup(form, depth + 1) }
+          '\n' +
+          indentation(depth) +
+          formToMarkup(form, depth + 1) +
+          '\n' +
+          indentation(depth) }
       else {
         throw new Error('Invalid form content') } } }
 

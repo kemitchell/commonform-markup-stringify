@@ -21,6 +21,42 @@ assert.equal(
   'This agreement (this ""Agreement"") is between [] and the' +
   ' <Company>. See {Something}.')
 
+assert.equal(
+  stringify({
+  content: [
+    'If you see:',
+    { form: { content: [ 'a lion;'] } },
+    { form: { content: [ 'a tiger; or'] } },
+    { form: {
+        content: [
+          { form: { content: [ 'something scary;'] } },
+          { form: { content: [ 'like a bear'] } } ] } },
+    'then run!' ]}),
+  [ 'If you see:',
+    '',
+    '    \\\\',
+    '    a lion;',
+    '    ',
+    '',
+    '    \\\\',
+    '    a tiger; or',
+    '    ',
+    '',
+    '    \\\\',
+    '    ',
+    '',
+    '        \\\\',
+    '        something scary;',
+    '        ',
+    '',
+    '        \\\\',
+    '        like a bear',
+    '        ',
+    '    ',
+    '',
+    'then run!' ]
+    .join('\n'))
+
 var form = {
   content: [
     { heading: 'Definition',
