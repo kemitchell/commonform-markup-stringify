@@ -1,15 +1,22 @@
 {
   "name": "commonform-markup-stringify",
-  "version": "0.1.0",
   "description": "stringify a Common Form as Common Form markup",
+  "version": "0.1.0",
   "author": "Kyle E. Mitchell <kyle@kemitchell.com> (https://kemitchell.com/)",
-  "repository": "kemitchell/commonform-markup-stringify",
-  "license": "Apache-2.0",
   "devDependencies": {
     "commonform-markup-parse": "^0.2.0",
     "defence-cli": "^1.0.1",
     "replace-require-self": "^1.0.0"
   },
+  "files": [
+    "index.js",
+    "LICENSE",
+    "NOTICE",
+    "README.md",
+    "sample.cform"
+  ],
+  "license": "Apache-2.0",
+  "repository": "kemitchell/commonform-markup-stringify",
   "scripts": {
     "test": "defence README.md | replace-require-self | node"
   }
