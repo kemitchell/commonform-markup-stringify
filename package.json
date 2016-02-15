@@ -1,7 +1,7 @@
 {
   "name": "commonform-markup-stringify",
   "description": "stringify a Common Form as Common Form markup",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Kyle E. Mitchell <kyle@kemitchell.com> (https://kemitchell.com/)",
   "devDependencies": {
     "commonform-markup-parse": "^0.3.0",
