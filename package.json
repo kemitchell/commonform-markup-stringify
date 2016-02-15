@@ -15,6 +15,7 @@
     "README.md",
     "sample.cform"
   ],
+  "homepage": "https://commonform.github.io",
   "license": "Apache-2.0",
   "repository": "kemitchell/commonform-markup-stringify",
   "scripts": {
