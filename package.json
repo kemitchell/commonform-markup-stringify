@@ -6,7 +6,8 @@
   "devDependencies": {
     "commonform-markup-parse": "^0.3.0",
     "defence-cli": "^1.0.1",
-    "replace-require-self": "^1.0.0"
+    "replace-require-self": "^1.0.0",
+    "standard": "^8.0.0"
   },
   "files": [
     "index.js",
@@ -19,6 +20,7 @@
   "license": "Apache-2.0",
   "repository": "kemitchell/commonform-markup-stringify",
   "scripts": {
-    "test": "defence README.md | replace-require-self | node"
+    "test": "defence README.md | replace-require-self | node",
+    "lint": "standard"
   }
 }
