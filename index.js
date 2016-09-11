@@ -23,13 +23,13 @@ var forObject = function (item, depth) {
   var indent = indentation(depth)
   switch (key) {
     case 'use':
-      return '<' + value + '>'
+      return '<' + escape(value) + '>'
     case 'definition':
-      return '""' + value + '""'
+      return '""' + escape(value) + '""'
     case 'blank':
-      return '[' + value + ']'
+      return '[' + escape(value) + ']'
     case 'reference':
-      return '{' + value + '}'
+      return '{' + escape(value) + '}'
     default:
       if (item.hasOwnProperty('form')) {
         var form = item.form
@@ -37,7 +37,7 @@ var forObject = function (item, depth) {
           indent +
           (
             item.hasOwnProperty('heading')
-            ? '\\ ' + item.heading + ' '
+            ? '\\ ' + escape(item.heading) + ' '
             : '\\'
           ) +
           (
@@ -70,11 +70,17 @@ function formToMarkup (form, depth) {
       buffer = buffer + '\n\n'
     }
     if (typeof element === 'string') {
-      return buffer + element
+      return buffer + escape(element)
     } else {
       return buffer + forObject(element, depth)
     }
   }, '')
+}
+
+function escape (string) {
+  return string
+  .replace(/([<>{}_\\\[\]])/g, '\\$1')
+  .replace(/""/g, '\\""')
 }
 
 function stringify (form) {

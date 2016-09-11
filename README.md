@@ -26,6 +26,11 @@ assert.equal(
 )
 
 assert.equal(
+  stringify({content: ['This paragraph has [brackets] in it.']}),
+  'This paragraph has \\[brackets\\] in it.'
+)
+
+assert.equal(
   stringify({
     content: [
       'If you see:',
